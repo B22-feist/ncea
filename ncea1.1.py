@@ -44,6 +44,7 @@ while True:
                userInput = float(userInput)
               except:
                userInput = str(userInput)
+               
                # if the user enters a letter the user input is converted to something the correct answer 
                if userInput.lower() == "a":
                         userInput = answer1[x]
