@@ -5,10 +5,9 @@ answer2 = questionDictionary["possible answers 2"]
 answer3 = questionDictionary["possible answers 3"]
 answer4 = questionDictionary["possible answers 4"]
 correctAnswer = questionDictionary["correct answers"]
+
+
 #sets up a while true loop for my program to run
-
-
-
 while True:
     score = 0
     print(" ")
@@ -45,24 +44,21 @@ while True:
                userInput = float(userInput)
               except:
                userInput = str(userInput)
-               # if the user enters a letter the user input is converted to something the opratiate answer
-               match userInput.lower():
+               # if the user enters a letter the user input is converted to something the correct answer 
+               if userInput.lower() == "a":
+                        userInput = answer1[x]
                   
-                  case "a":
-                        userInput = answer1[x-1]
+               elif userInput.lower() == "b":
+                        userInput = answer2[x]
                   
-                  case "b":
-                        userInput = answer2[x-1]
+               elif userInput.lower() == "c":
+                        userInput = answer3[x]
                   
-                  case "c":
-                        userInput = answer3[x-1]
-                  
-                  case "d":
-                        userInput = answer4[x-1]
+               elif userInput.lower() == "d":
+                        userInput = answer4[x]
                
               if userInput == correctAnswer[x]:
                    print("you got the question right")
-                   print(userInput)
                    score += 1
               
               else:
