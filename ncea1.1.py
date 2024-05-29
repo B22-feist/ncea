@@ -70,10 +70,11 @@ while True:
               
          print(f"well done you have finished the quiz and have scored {score} out of 10")
 
-    if userInput.lower() == "hard":
+    if diffcultly.lower() == "hard":
+        
         hardQuestionOrder = {}
         if len(hardQuestionOrder) != 10:
-         hardQuestionOrder.append(random.randint(1,11))
+         hardQuestionOrder.add(random.randint(1,11))
                                # sets up a for loop to repeat for the number of questions
          for x in range(10):
               
