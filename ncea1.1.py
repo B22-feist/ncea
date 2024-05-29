@@ -46,16 +46,17 @@ while True:
                userInput = str(userInput)
                
                # if the user enters a letter the user input is converted to something the correct answer 
-               if userInput.lower() == "a":
+               match userInput.lower():
+                case "a":
                         userInput = answer1[x]
                   
-               elif userInput.lower() == "b":
+                case"b":
                         userInput = answer2[x]
                   
-               elif userInput.lower() == "c":
+                case "c":
                         userInput = answer3[x]
                   
-               elif userInput.lower() == "d":
+                case "d":
                         userInput = answer4[x]
                
               if userInput == correctAnswer[x]:
@@ -65,5 +66,5 @@ while True:
               else:
                  print('you got the question wrong')
               
-         print(f"well done you have finished the quiz and have scored {score}")
+         print(f"well done you have finished the quiz and have scored {score} out of 10")
                       
