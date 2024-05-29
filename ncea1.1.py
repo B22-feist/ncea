@@ -1,3 +1,4 @@
+import random
 from question import questionDictionary
 question = questionDictionary["questions"]
 answer1 = questionDictionary["possible answers 1"]
@@ -47,6 +48,7 @@ while True:
                
                # if the user enters a letter the user input is converted to something the correct answer 
                match userInput.lower():
+                
                 case "a":
                         userInput = answer1[x]
                   
@@ -67,4 +69,57 @@ while True:
                  print('you got the question wrong')
               
          print(f"well done you have finished the quiz and have scored {score} out of 10")
-                      
+
+    if userInput.lower() == "hard":
+        hardQuestionOrder = {}
+        if len(hardQuestionOrder) != 10:
+         hardQuestionOrder.append(random.randint(1,11))
+                               # sets up a for loop to repeat for the number of questions
+         for x in range(10):
+              
+              print(question[hardQuestionOrder[x]])
+              
+              # makes the possible answer that don't hold value not appear to make the UI look cleaner
+              if answer1[hardQuestionOrder[x]] != "":
+               print(answer1[hardQuestionOrder[x]])
+              
+              if answer2[hardQuestionOrder[x]] != "":
+               print(answer2[hardQuestionOrder[x]])
+              
+              if answer3[x] != "":
+               print(answer3[hardQuestionOrder[x]])
+              
+              if answer4[hardQuestionOrder[x]] != "":
+               print(answer4[hardQuestionOrder[x]])
+
+              userInput = input()
+
+              # converts the user input into a string or float when needed
+              try:
+               userInput = float(userInput)
+              except:
+               userInput = str(userInput)
+               
+               # if the user enters a letter the user input is converted to something the correct answer 
+               match userInput.lower():
+                
+                case "a":
+                        userInput = answer1[hardQuestionOrder[x]]
+                  
+                case"b":
+                        userInput = answer2[hardQuestionOrder[x]]
+                  
+                case "c":
+                        userInput = answer3[hardQuestionOrder[x]]
+                  
+                case "d":
+                        userInput = answer4[hardQuestionOrder[x]]
+               
+              if userInput == correctAnswer[hardQuestionOrder[x]]:
+                   print("you got the question right")
+                   score += 1
+              
+              else:
+                 print('you got the question wrong')
+              
+         print(f"well done you have finished the quiz and have scored {score} out of 10")
