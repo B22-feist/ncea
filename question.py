@@ -5,7 +5,7 @@
 #       The correct asnswer
 
 questionDictionary = {
-    "questions": ("Is the treaty of Waitangi becoming more important in NZ law? ", "What percentage of the NZ population is Maori? ", "What is the Waitangi Tribunal", "What was an important Piece of legislation during 1972 for Maori rights?", "The NZ land wars were a series of wars fought between Maori and British allies. What was the cause of the war? ","Were the Moriori eaten by Maori? T or F","How many Maori seats in parliament are there?","What political party is supposed to represent Maori interest in parliament?", "Layer these Maori tribal groups from largest to smallest Iwi, Hapu, whanau?","Who is the Te Kingitanga (Maori king) currently?",),
+    "questions": ("Is the treaty of Waitangi becoming more important in NZ law? ", "What percentage of the NZ population is Maori, rounded to the nearest 0.5(the percentage is between 16 and 18 %) ? ", "What is the Waitangi Tribunal", "What was an important Piece of legislation during 1972 for Maori rights?", "The NZ land wars were a series of wars fought between Maori and British allies. What was the cause of the war? ","Were the Moriori eaten by Maori? T or F","How many Maori seats in parliament are there?","What political party is supposed to represent Maori interest in parliament?", "Layer these Maori tribal groups from largest to smallest Iwi, Hapu, whanau?","Who is the Te Kingitanga (Maori king) currently?",),
     
     "possible answers 1":("A) True","","A) A parliament","A) The Maori language act, which established Maori as a national language","A) White settlers wanting more land","A) True","","A) labour" ,"A) Iwi, Hapu, Whanau","A) Tūheitia"),
     

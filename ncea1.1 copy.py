@@ -13,32 +13,36 @@ while True:
     print(" ")
     print("""Welcome, to my Quiz. It is about Maori custom in nz \n to pass you need to get more than 5 out of ten """)
 
+    diffcultly= str(input("""what diffcult do you want to do
+\n easy where the question are in a set and there is no score.
+\n Or hard mode, where a score is kept, you are timed and the question are random: """))
+    
+    if diffcultly.lower() == "easy":
          
          # sets up a for loop to repeat for the number of questions
-    for x in range(10):
+         for x in range(10):
               
-         print(question[x])
+              print(question[x])
               
               # makes the possible answer that don't hold value not appear to make the UI look cleaner
-         if answer1[x] != "":
-                print(answer1[x])
+              if answer1[x] != "":
+               print(answer1[x])
               
-         if answer2[x] != "":
-                print(answer2[x])
+              if answer2[x] != "":
+               print(answer2[x])
               
-         if answer3[x] != "":
-                print(answer3[x])
+              if answer3[x] != "":
+               print(answer3[x])
               
-         if answer4[x] != "":
-                print(answer4[x])
+              if answer4[x] != "":
+               print(answer4[x])
               
-         while True:
-          try:
-           userInput = input()
-           break
-          
-          except:
-           print("you have entered an incorrect answer please, enter the answer again")
+              while True:
+               try:
+                userInput = input()
+                break
+               except:
+                print("you have entered an incorrect answer please, enter the answer again")
               
               # converts the user input into a string or float when needed
               try:
