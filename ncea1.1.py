@@ -73,9 +73,11 @@ while True:
     if diffcultly.lower() == "hard":
         
         hardQuestionOrder = {}
+        
         if len(hardQuestionOrder) != 10:
          hardQuestionOrder.add(random.randint(1,11))
-                               # sets up a for loop to repeat for the number of questions
+        
+        # sets up a for loop to repeat for the number of questions
          for x in range(10):
               
               print(question[hardQuestionOrder[x]])
