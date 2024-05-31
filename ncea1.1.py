@@ -60,10 +60,16 @@ while True:
                                 userInput = answer4[x]
                                 
                         case "f":
-                                userInput =  answer2[x]
+                                userInput = answer2[x]
                                 
                         case "t":
-                                userInput = answer1[x] 
+                                userInput = answer1[x]
+                        
+                        case "true":
+                                userInput = answer1[x]
+
+                        case "false":
+                                userInput = answer2[x]
                 
                 if userInput == correctAnswer[x]:
                         print("you got the question right\n")
@@ -76,6 +82,6 @@ while True:
         
         retake = str(input("do you want to retake the test. T or F"))
         
-        if retake.lower != "f":
+        if retake.lower() == "f":
          print("Thank you for taking the test the program will end now.")
          break
