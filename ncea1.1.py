@@ -12,8 +12,7 @@ correctAnswer = questionDictionary["correct answers"]
 #sets up a while true loop for my program to run
 while True:
     score = 0
-    print(" ")
-    print("""Welcome, to my Quiz. It is about Maori custom in nz \n to pass you need to get more than 5 out of ten """)
+    print("""\nWelcome, to my Quiz. It is about Maori custom in nz \n to pass you need to get more than 5 out of ten """)
     start = str(input("do you wish to begin? t of f: "))
     if start != "f":         
                 # sets up a for loop to repeat for the number of questions
@@ -77,8 +76,9 @@ while True:
                 
                 else:
                         print('you got the question wrong\n')
-                
-        print(f"well done you have finished the quiz and have scored {score} out of 10")
+         
+        if score <= 5:
+              print(f"well done, you passed with a score of {score}")
         
         retake = str(input("do you want to retake the test. T or F"))
         
