@@ -77,8 +77,15 @@ while True:
                 else:
                         print('you got the question wrong\n')
          
-        if score <= 5:
+        
+        if score == 10:
+              print("You have perfect 10 out of 10 in this quiz, congratulation")
+        
+        elif score <= 5:
               print(f"well done, you passed with a score of {score}")
+        
+        else:
+              print(f"sorry, you lost with {score} out of 10. Better luck next time.")
         
         retake = str(input("do you want to retake the test. T or F"))
         

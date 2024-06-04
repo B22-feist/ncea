@@ -15,4 +15,4 @@ questionDictionary = {
     
     "possible answers 4":("","D) 17.5","D) A body of law","D) Maori gaining full access to the bill of rights","D) It didn't happen","","D) 8","D) Te Pati Maori","D) Iwi, Whanau, Hapu","D) Atairangikaahu"),
     
-    "correct answers":("A) True", "B) 16.5", "B) A body that deals with breaches of the treaty of Waitangi", "A) The Maori language act, which established Maori as a national language","A) White settlers wanting more land","B) False","C) 7","D) Te Pati Maori","A) Iwi, Hapu, Whanau","A) Tūheitia")}
+    "correct answers":("A) True", "B) 16.5", "B) A body that deals with breaches of the treaty of Waitangi", "A) The Maori language act, which established Maori as a national language","A) White settlers wanting more land","B) False",float(7),"D) Te Pati Maori","A) Iwi, Hapu, Whanau","A) Tūheitia")}
