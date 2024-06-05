@@ -12,9 +12,12 @@ correctAnswer = questionDictionary["correct answers"]
 #sets up a while true loop for my program to run
 while True:
     score = 0
+    
     print("""\nWelcome, to my Quiz. It is about Maori custom in nz \n to pass you need to get more than 5 out of ten """)
     start = str(input("do you wish to begin? t of f: "))
+    
     if start != "f":         
+                
                 # sets up a for loop to repeat for the number of questions
         for x in range(len(question)):
                 
@@ -31,20 +34,18 @@ while True:
                 while True:
                 
                  try:
-                  userInput = input()
+                  userInput = str(input())
                   break
                 
                  except:
                   print("you have entered an incorrect answer please, enter the answer again")
                 
                 # converts the user input into a string or float when needed
-                try:
-                 userInput = float(userInput)
                 
-                except:
-                 userInput = str(userInput)
+                userInput = str(userInput)
+                
                 # if the user enters a letter the user input is converted to answer they meant to put in.
-                 match userInput.lower():
+                match userInput.lower():
                                 
                         case "a":
                                 userInput = answer1[x]
