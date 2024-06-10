@@ -38,7 +38,7 @@ while True:
                   break
                 
                  except:
-                  print("you have entered an incorrect answer please, enter the answer again")
+                  print("\nyou have entered an incorrect answer please, enter the answer again")
                 
                 # converts the user input into a string or float when needed
                 
@@ -88,7 +88,7 @@ while True:
         else:
               print(f"sorry, you lost with {score} out of 10. Better luck next time.")
         
-        retake = str(input("do you want to retake the test. T or F"))
+        retake = str(input("do you want to retake the test. T or F "))
         
         if retake.lower() == "f":
          print("Thank you for taking the test the program will end now.")
