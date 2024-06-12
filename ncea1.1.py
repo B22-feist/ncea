@@ -1,11 +1,11 @@
-# this section adds in the question dictionary which I have stored on a seperate file as well as convert the dictionary into something I can use for the questions.
-from question import questionDictionary
-question = questionDictionary["questions"]
-answer1 = questionDictionary["possible answers 1"]
-answer2 = questionDictionary["possible answers 2"]
-answer3 = questionDictionary["possible answers 3"]
-answer4 = questionDictionary["possible answers 4"]
-correctAnswer = questionDictionary["correct answers"]
+# Define the question, answers and the correct answers
+
+questions = ("\nIs the treaty of Waitangi becoming more important in NZ law? \n", "What percentage of the NZ population is Maori ?\n", "What is the Waitangi Tribunal\n", "What was an important Piece of legislation during 1972 for Maori rights?\n", "The NZ land wars were a series of wars fought between Maori and British allies. What was the cause of the war? \n","Were the Moriori eaten by Maori? T or F\n","How many Maori seats in parliament are there?\n","What political party is supposed to represent Maori interest in parliament?\n", "Layer these Maori tribal groups from largest to smallest?\n","Who is the Te Kingitanga (Maori king) currently?\n",)
+answer1 = ("A) True","A) 16","A) A parliament","A) The Maori language act, which established Maori as a national language","A) White settlers wanting more land","A) True","A) 5","A) labour" ,"A) Iwi, Hapu, Whanau","A) Tūheitia")
+answer2 = ("B) False","B) 16.5","B) A body that deals with breaches of the treaty of Waitangi","B) Introduction of the Waitangi tribunal","B) Perceived threat of Maori conquering the white settlers","B) False","B) 6","B) Act","B) Whanau, Hapu, Iwi","B) Pōtatau")
+answer3 = ("","C) 17","C) A political movement","C) All stolen Maori land returned","c) Break up of the british empire","","C) 7","C) National","C) Hapu, Iwi, Whanau","C) Koroki")
+answer4 = ("","D) 17.5","D) A body of law","D) Maori gaining full access to the bill of rights","D) It didn't happen","","D) 8","D) Te Pati Maori","D) Iwi, Whanau, Hapu","D) Atairangikaahu")
+correctAnswer = ("A) True", "B) 16.5", "B) A body that deals with breaches of the treaty of Waitangi", "A) The Maori language act, which established Maori as a national language","A) White settlers wanting more land","B) False","C) 7","D) Te Pati Maori","A) Iwi, Hapu, Whanau","A) Tūheitia")
 
 
 
@@ -18,17 +18,18 @@ while True:
     
     if start != "f":         
                 
-                # sets up a for loop to repeat for the number of questions
-        for x in range(len(question)):
+        # for loop to print questions
+        for x in range(len(questions)):
                 
-                listOfQuestion = (answer1[x], answer2[x], answer3[x], answer4[x])     
+                listOfQuestions = (answer1[x], answer2[x], answer3[x], answer4[x])     
                 
-                print(question[x])
+                print(questions[x])
                 
-        # makes the possible answer that don't hold value not appear to make the UI look cleaner
-                for y in range (len(listOfQuestion)):
-                        if listOfQuestion[y] != "":
-                                print(listOfQuestion[y])
+        # this code section iterates across list of different possible answers 
+        # True/False questions have only two possible answers
+                for y in range (len(listOfQuestions)):
+                        if listOfQuestions[y] != "": #checks if there are more than two possible answers
+                                print(listOfQuestions[y])
                 
 
                 while True:
@@ -39,10 +40,6 @@ while True:
                 
                  except:
                   print("\nyou have entered an incorrect answer please, enter the answer again")
-                
-                # converts the user input into a string or float when needed
-                
-                userInput = str(userInput)
                 
                 # if the user enters a letter the user input is converted to answer they meant to put in.
                 match userInput.lower():
@@ -72,7 +69,7 @@ while True:
                                 userInput = answer2[x]
                 
                 if userInput == correctAnswer[x]:
-                        print("you got the question right\n")
+                        print("\nyou got the question right\n")
                         score += 1
                 
                 else:
