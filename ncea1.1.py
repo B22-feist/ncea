@@ -5,15 +5,36 @@ answer1 = ("A) True","A) 16","A) A parliament","A) The Maori language act, which
 answer2 = ("B) False","B) 16.5","B) A body that deals with breaches of the treaty of Waitangi","B) Introduction of the Waitangi tribunal","B) Perceived threat of Maori conquering the white settlers","B) False","B) 6","B) Act","B) Whanau, Hapu, Iwi","B) Pōtatau")
 answer3 = ("","C) 17","C) A political movement","C) All stolen Maori land returned","c) Break up of the british empire","","C) 7","C) National","C) Hapu, Iwi, Whanau","C) Koroki")
 answer4 = ("","D) 17.5","D) A body of law","D) Maori gaining full access to the bill of rights","D) It didn't happen","","D) 8","D) Te Pati Maori","D) Iwi, Whanau, Hapu","D) Atairangikaahu")
-correctAnswer = ("A) True", "B) 16.5", "B) A body that deals with breaches of the treaty of Waitangi", "A) The Maori language act, which established Maori as a national language","A) White settlers wanting more land","B) False","C) 7","D) Te Pati Maori","A) Iwi, Hapu, Whanau","A) Tūheitia")
+correctAnswer = ("A", "B", "B", "A","A","B","C","D","A","A")
 
+#function to print questions
+def printQuestion(num):
+        listOfQuestions = (answer1[num], answer2[num], answer3[num], answer4[num]) 
+        
+        # this code section iterates across list of different possible answers 
+        # True/False questions have only two possible answers
+        for y in range (len(listOfQuestions)):
+                if listOfQuestions[y] != "": #checks if there are more than two possible answers
+                        print(listOfQuestions[y])
 
+def passOrFail(userScore):
+              #if the user got ten out of ten, the program will tell them they got the question right
+        if userScore == 10:
+             return print("You have perfect 10 out of 10 in this quiz, congratulation")
+        
+        #sets up a range so if the user get between 5 and 9 tells the user they got the question right
+        elif 9>= userScore <= 5:
+              return print(f"well done, you passed with a score of {userScore}")
+        
+        #tells the user they lost if they get less than four
+        else:
+              return print(f"sorry, you lost with {userScore} out of 10. Better luck next time.")
 
 #sets up a while true loop for my program to run
 while True:
     score = 0
     
-    print("""\nWelcome, to my Quiz. It is about Maori custom in nz \n to pass you need to get more than 5 out of ten """)
+    print("""\nWelcome, to my Quiz. It is about Maori custom in nz \n to pass you need to get more than 5 out of ten.\n only enter a, b, c or d """)
     start = str(input("do you wish to begin? t of f: "))
     
     if start != "f":         
@@ -21,17 +42,12 @@ while True:
         # for loop to print questions
         for x in range(len(questions)):
                 
-                listOfQuestions = (answer1[x], answer2[x], answer3[x], answer4[x])     
-                
                 print(questions[x])
                 
-        # this code section iterates across list of different possible answers 
-        # True/False questions have only two possible answers
-                for y in range (len(listOfQuestions)):
-                        if listOfQuestions[y] != "": #checks if there are more than two possible answers
-                                print(listOfQuestions[y])
+                # calls function to print questions
+                printQuestion(x)
                 
-
+                # test if the user's input can be converted to a string and if not ask them to renter their answer
                 while True:
                 
                  try:
@@ -40,51 +56,18 @@ while True:
                 
                  except:
                   print("\nyou have entered an incorrect answer please, enter the answer again")
-                
-                # if the user enters a letter the user input is converted to answer they meant to put in.
-                match userInput.lower():
-                                
-                        case "a":
-                                userInput = answer1[x]
-                                
-                        case"b":
-                                userInput = answer2[x]
-                                
-                        case "c":
-                                userInput = answer3[x]
-                                
-                        case "d":
-                                userInput = answer4[x]
-                                
-                        case "f":
-                                userInput = answer2[x]
-                                
-                        case "t":
-                                userInput = answer1[x]
-                        
-                        case "true":
-                                userInput = answer1[x]
 
-                        case "false":
-                                userInput = answer2[x]
-                
+                #check if user input is the correct answer, tells the user they got the question correct and 1 to the user score
                 if userInput == correctAnswer[x]:
                         print("\nyou got the question right\n")
                         score += 1
-                
+                # tells the user they got the question wrong
                 else:
                         print('you got the question wrong\n')
          
+                passOrFail(score)
         
-        if score == 10:
-              print("You have perfect 10 out of 10 in this quiz, congratulation")
-        
-        elif score <= 5:
-              print(f"well done, you passed with a score of {score}")
-        
-        else:
-              print(f"sorry, you lost with {score} out of 10. Better luck next time.")
-        
+        # will see if the user wants to retake the, and if so 
         retake = str(input("do you want to retake the test. T or F "))
         
         if retake.lower() == "f":
