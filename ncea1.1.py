@@ -82,6 +82,6 @@ while True:
  # will see if the user wants to retake the, and if so gets the user to retake the test.
     retake = str(input("do you want to retake the test. T or F "))
         
-    if retake.lower() == "f":
+    if retake.lower() != "t":
          print("Thank you for taking the test. The program will end now.")
          break
