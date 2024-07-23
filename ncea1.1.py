@@ -1,4 +1,4 @@
-# Define the question, answers and the correct answers
+# Define the question, answers and the correct answers in an array
 
 questions = ("\nIs the treaty of Waitangi becoming more important in NZ law? \n", "What percentage of the NZ population is Maori ?\n", "What is the Waitangi Tribunal\n", "What was an important Piece of legislation during 1972 for Maori rights?\n", "The NZ land wars were a series of wars fought between Maori and British allies. What was the cause of the war? \n","Were the Moriori eaten by Maori?\n","How many Maori seats in parliament are there?\n","What political party is supposed to represent Maori interest in parliament?\n", "Layer these Maori tribal groups from largest to smallest?\n","Who is the Te Kingitanga (Maori king) currently?\n",)
 answer1 = ("A) True","A) 16","A) A parliament","A) The Maori language act, which established Maori as a national language","A) White settlers wanting more land","A) True","A) 5","A) labour" ,"A) Iwi, Hapu, Whanau","A) Tūheitia")
@@ -9,6 +9,7 @@ correctAnswer = ("a", "b", "b", "a","a","b","c","d","a","a")
 
 #defines any constants
 MAXSCORE = 10
+INCRIEMENT = 1
 
 #function to print possible answer to the questions
 def printOptions(num):
@@ -26,7 +27,7 @@ def passOrFail(userScore):
              return print("You have perfect 10 out of 10 in this quiz, congratulation")
         
         #sets up a range so if the user get between 5 and 9 tells the user they got the question right
-        elif MAXSCORE-1>= userScore <= MAXSCORE/2:
+        elif MAXSCORE-INCRIEMENT>= userScore >= MAXSCORE/2:
               return print(f"well done, you passed with a score of {userScore}")
         
         #tells the user they lost if they get less than four
@@ -62,7 +63,7 @@ while True:
                         break
                   
                   else:
-                        print("you haven't enter A, B, C or D. \n Enter A, B, C or D.")
+                        print("you haven't entered A, B, C or D. \n Enter A, B, C or D.")
                 
                  except:
                   print("\nyou have entered an incorrect answer please, enter the answer again")
@@ -70,7 +71,7 @@ while True:
                 #check if user input is the correct answer, tells the user they got the question correct and 1 to the user score
                 if userInput.lower() == correctAnswer[x]:
                         print("\nyou got the question right\n")
-                        score += 1
+                        score += INCRIEMENT
                 
                 # tells the user they got the question wrong
                 else:
